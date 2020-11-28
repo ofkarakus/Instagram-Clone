@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { Password, Email, Username, ContainedButton } from "../";
 import { Context } from "../../../App";
+import { useHistory } from "react-router-dom";
 
 export const LoginForm = () => {
   const { auth } = useContext(Context);
-
-  console.log(auth.currentUser);
+  const history = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -24,8 +24,15 @@ export const LoginForm = () => {
         auth
           .createUserWithEmailAndPassword(values.email, values.password)
           .then(() => {
-            alert("Your account successfully created.");
+            alert("Your account successfully created. You can log in now.");
             auth.currentUser.updateProfile({ displayName: values.username });
+            history.push("/");
+            auth
+              .signOut()
+              .then(() => {
+                console.log("Signed Out");
+              })
+              .catch((err) => alert(err.message));
           })
           .catch((err) => alert(err.message));
 
