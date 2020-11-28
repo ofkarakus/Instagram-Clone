@@ -19,6 +19,16 @@ body {
     border: 1px solid rgb(219, 219, 219);
     background-color: rgb(255, 255, 255);
 
+    &__text{
+      color: rgb(142,142,142);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    &__terms{
+      color: rgb(142,142,142);
+      font-size: 0.8rem;
+    }
+
     &__or {
       display: flex;
       align-items: center;

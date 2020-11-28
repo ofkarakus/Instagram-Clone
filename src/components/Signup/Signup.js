@@ -5,35 +5,39 @@ import "./Login.style.scss";
 import appstore from "../../assets/images/appstore.png";
 import playstore from "../../assets/images/playstore.png";
 import { Link } from "react-router-dom";
+import { ContainedButton } from "./";
 
-export function Login() {
+export function Signup() {
   return (
     <div className="container">
       <div className="container__login">
         <Instagram />
-        <LoginForm />
+        <p className="container__login__text">
+          Sign up to see photos and videos from your friends.
+        </p>
+        <ContainedButton
+          startIcon={<Facebook/>}
+          backgroundColor="rgb(0,149,246)"
+          text="Log in with Facebook"
+        />
+
         <div className="container__login__or">
           <p className="container__login__or__line"></p>
           <p className="container__login__or__text">OR</p>
           <p className="container__login__or__line"></p>
         </div>
-        <TextButton
-          startIcon={<Facebook />}
-          btnText={"Log in with Facebook"}
-          color={"rgb(56,81,133)"}
-          fontWeight={"bold"}
-        />
-        <TextButton
-          btnText={"Forgot password?"}
-          color={"rgb(0,55,107)"}
-          fontWeight={"normal"}
-        />
+        <LoginForm />
+        <p className="container__login__terms">
+          By signing up, you agree to our Terms. Learn how we collect, use and
+          share your data in our Data Policy and how we use cookies and similar
+          technology in our Cookies Policy.
+        </p>
       </div>
       <div className="container__signup">
-        <p className="container__signup__text">Don't have an account?</p>
-        <Link style={{ textDecoration: 'none' }} to="/signup">
+        <p className="container__signup__text">Have an account?</p>
+        <Link style={{ textDecoration: 'none' }} to="/">
           <TextButton
-            btnText={"Sign up"}
+            btnText={"Log in"}
             color={"rgb(0,162,248)"}
             fontWeight={"bold"}
           />
