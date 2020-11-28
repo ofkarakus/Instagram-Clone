@@ -1,0 +1,63 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgb(250,250,250);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+
+  &__login {
+    width: 19rem;
+    text-align: center;
+    padding: 1rem 2.5rem;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: rgb(255, 255, 255);
+
+    &__or {
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0;
+
+      &__line {
+        border-top: 1px solid rgb(219, 219, 219);
+        flex: 1;
+      }
+      &__text {
+        margin: 0 10px;
+        color: rgb(142, 142, 142);
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  &__signup {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: rgb(255, 255, 255);
+    width: 19rem;
+    padding: 0rem 2.5rem;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+  &__stores {
+    &__appstore {
+      width: 150px;
+      margin-right: 10px;
+    }
+
+    &__playstore {
+      width: 150px;
+    }
+  }
+  &__footer {
+    position: fixed;
+    bottom: 5px;
+    margin: 0;
+  }
+}
