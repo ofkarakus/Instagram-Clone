@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   margin: {
-    margin: '3px 0 15px'
+    margin: '4px 0'
   },
   withoutLabel: {
     marginTop: theme.spacing(3),
@@ -27,11 +27,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Password({name, onChange, value}) {
+export function Password({name, onChange, value, label, id}) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
+    confirmedPassword: "",
     weight: "",
     weightRange: "",
     showPassword: false,
@@ -55,9 +56,9 @@ export function Password({name, onChange, value}) {
       variant="outlined"
       size='small'
     >
-      <InputLabel htmlFor="password">Password</InputLabel>
+      <InputLabel htmlFor="password">{label}</InputLabel>
       <OutlinedInput
-        id="password"
+        id={id}
         type={values.showPassword ? "text" : "password"}
         value={value}
         onChange={onChange}

@@ -2,10 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     "& > *": {
-      margin: "5px 0",
+      margin: "10px 0 5px",
       backgroundColor: props => props.backgroundColor,  
       boxSizing: "border-box",
       textTransform: 'none',

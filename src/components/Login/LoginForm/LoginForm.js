@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { Password, Email, ContainedButton } from "../";
+import { Context } from "../../../App";
 
 export const LoginForm = () => {
+  const { auth } = useContext(Context);
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      auth
+        .signInWithEmailAndPassword(values.email, values.password)
+        .then(() => {
+          alert("You successfully signed in.");
+        })
+        .catch((err) => alert(err.message));
+
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
