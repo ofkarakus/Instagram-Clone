@@ -31,9 +31,39 @@ class Firebase {
     this.firestore = firebase.firestore();
   }
 
-  // login  signInWithEmailAndPassword
+  signIn(email, password) {
+    this.auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        alert("You successfully signed in.");
+      })
+      .catch((err) => alert(err.message));
+  }
 
-  // logout signOut
+  signUp(username, email, password) {
+    this.auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        alert("Your account successfully created. You can log in now.");
+        this.auth.currentUser.updateProfile({ displayName: username });
+        this.auth
+          .signOut()
+          .then(() => {
+            console.log("Signed Out");
+          })
+          .catch((err) => alert(err.message));
+      })
+      .catch((err) => alert(err.message));
+  }
+
+  logOut() {
+    this.auth
+      .signOut()
+      .then(() => {
+        console.log("Signed Out");
+      })
+      .catch((err) => alert(err.message));
+  }
 
   // forgot password sendPasswordResetEmail
 
