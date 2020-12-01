@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export function TextInput({type, name, onChange, value, label}) {
+export function TextInput({type, name, onChange, value, label, error, helperText}) {
   const classes = useStyles();
 
   return (
@@ -26,6 +26,8 @@ export function TextInput({type, name, onChange, value, label}) {
         name={name}
         onChange={onChange}
         value={value}
+        error={error}
+        helperText={helperText}
       />
     </form>
   );

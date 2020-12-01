@@ -27,7 +27,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function PasswordInput({ onChange, value, label, id, labelWidth, name }) {
+export function PasswordInput({
+  onChange,
+  value,
+  label,
+  id,
+  labelWidth,
+  name,
+  error,
+  helperText,
+}) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     amount: "",
@@ -37,6 +46,8 @@ export function PasswordInput({ onChange, value, label, id, labelWidth, name }) 
     weightRange: "",
     showPassword: false,
   });
+
+  console.log("h", helperText);
 
   // const handleChange = (prop) => (event) => {
   //   setValues({ ...values, [prop]: event.target.value });
@@ -63,6 +74,7 @@ export function PasswordInput({ onChange, value, label, id, labelWidth, name }) 
         type={values.showPassword ? "text" : "password"}
         value={value}
         onChange={onChange}
+        error={error}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
@@ -77,6 +89,19 @@ export function PasswordInput({ onChange, value, label, id, labelWidth, name }) 
         }
         labelWidth={labelWidth ? labelWidth : 70}
       />
+      {helperText ? (
+        <p
+          style={{
+            margin: "0",
+            padding: "5px 12px",
+            color: "red",
+            fontSize: "12px",
+            textAlign: "start",
+          }}
+        >
+          {helperText}
+        </p>
+      ) : null}
     </FormControl>
   );
 }
