@@ -10,7 +10,7 @@ export function LogIn() {
     <div className="wrapper">
       <div className="container">
         <div className="container__login">
-          <Instagram />
+          <Instagram width={240} margin='15px 0px' />
           <LogInForm />
           <div className="container__login__or">
             <p className="container__login__or__line"></p>

@@ -1,13 +1,13 @@
 import * as React from "react";
 
-export function Instagram() {
+export function Instagram({width, margin}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width={240}
+      width={width}
       viewBox="-27.751 -13.12 240.508 78.721"
-      style={{margin: '15px 0px'}}
+      style={{margin}}
     >
       <defs>
         <linearGradient

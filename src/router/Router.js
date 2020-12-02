@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { LogIn, SignUp, Home } from "../pages/";
+import { LogIn, SignUp, Home, Inbox, Explore } from "../pages/";
+import { Header } from "../components/";
 import { useContext } from "react";
 import { Context } from "../context/Context";
 
@@ -9,14 +10,18 @@ function AppRouter() {
   return (
     <Router>
       {currentUser ? (
-        <Switch>
-          <Route path="/" component={Home} />
-        </Switch>
+        <>
+          <Header />
+          <Switch>
+            <Route path="/inbox" component={Inbox} exact />
+            <Route path="/explore" component={Explore} exact />
+            <Route path="/" component={Home} />
+          </Switch>
+        </>
       ) : (
         <Switch>
-          <Route path="/" component={LogIn} exact />
-          <Route path="/signup" component={SignUp} />
-          <Route component={Error} />
+          <Route path="/signup" component={SignUp} exact />
+          <Route path="/" component={LogIn}  />
         </Switch>
       )}
     </Router>

@@ -5,3 +5,8 @@ export * from "./Input/TextInput/TextInput";
 export * from "./Instagram/Instagram";
 export * from "./LogInForm/LogInForm";
 export * from "./SignUpForm/SignUpForm";
+export * from "./Header/Header";
+export * from "./Icons/Compass/Compass";
+export * from "./Icons/Home/Home";
+export * from "./Icons/Letter/Letter";
+export * from "./Icons/Like/Like";

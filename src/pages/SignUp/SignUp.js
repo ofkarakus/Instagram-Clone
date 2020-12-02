@@ -10,7 +10,7 @@ export function SignUp() {
     <div className="wrapper">
       <div className="container">
       <div className="container__login">
-        <Instagram />
+        <Instagram width={240} margin='15px 0px' />
         <p className="container__login__text">
           Sign up to see photos and videos from your friends.
         </p>
