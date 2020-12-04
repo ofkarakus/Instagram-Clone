@@ -2,11 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Instagram, Compass, Letter, Home, Like } from "../";
+import { Instagram, Compass, Letter, Home, Like, Profile } from "../";
 import "./Header.style.scss";
 import SearchIcon from "@material-ui/icons/Search";
 import CancelIcon from "@material-ui/icons/Cancel";
-import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -91,13 +90,7 @@ export function Header() {
             <Letter />
             <Compass />
             <Like />
-            {/* TODO add modal */}
-            <Avatar   
-              className={classes.avatar}
-              alt="Remy Sharp"
-              src="/static/images/avatar/1.jpg"
-            />
-            {/* TODO add modal */}
+            <Profile />
           </div>
         </Toolbar>
       </AppBar>

@@ -10,3 +10,4 @@ export * from "./Icons/Compass/Compass";
 export * from "./Icons/Home/Home";
 export * from "./Icons/Letter/Letter";
 export * from "./Icons/Like/Like";
+export * from "./Icons/Profile/Profile";
