@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Instagram, Compass, Letter, Home, Like, Profile } from "../";
+import { Instagram, Compass, Letter, Home, Like, Profile, Post } from "../";
 import "./Header.style.scss";
 import SearchIcon from "@material-ui/icons/Search";
 import CancelIcon from "@material-ui/icons/Cancel";
@@ -10,6 +10,7 @@ import CancelIcon from "@material-ui/icons/Cancel";
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
+    marginBottom: '2rem'
   },
   appbar: {
     backgroundColor: "rgb(255,255,255)",
@@ -34,10 +35,6 @@ const useStyles = makeStyles(() => ({
     width: "20px",
     visibility: "hidden",
     cursor: "pointer",
-  },
-  avatar: {
-    width: "24px",
-    height: "24px",
   },
 }));
 
@@ -88,6 +85,7 @@ export function Header() {
           <div className="icons">
             <Home />
             <Letter />
+            <Post />
             <Compass />
             <Like />
             <Profile />

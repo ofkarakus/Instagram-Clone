@@ -4,12 +4,21 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const StyledMenu = withStyles({
   paper: {
-    margin: '0.8rem 0 0 2rem',
+    margin: "0.8rem 0 0 2rem",
     border: "1px solid #d3d4d5",
+
+    "& .MuiListItem-button": {
+      "&:hover": {
+        backgroundColor: "#fafafa",
+      },
+      "&:active": {
+        backgroundColor: "#fafafa",
+      },
+    },
   },
 })((props) => (
   <Menu
@@ -29,7 +38,6 @@ const StyledMenu = withStyles({
 
 const StyledMenuItem = withStyles((theme) => ({
   root: {
-
     "&:focus": {
       // backgroundColor: 'red',
       "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
